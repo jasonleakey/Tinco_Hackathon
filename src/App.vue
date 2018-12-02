@@ -25,8 +25,11 @@
   }
 
   #fb-root {
-    .fb_dialog, iframe {
+    .fb_dialog {
       z-index: 500 !important;
+    }
+    iframe {
+      z-index: 600 !important;
     }
   }
 </style>
