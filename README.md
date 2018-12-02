@@ -2,7 +2,7 @@
 
 ## Project Introduction
 
-Tinco is an virtual assistant or chatbot for solving DMV waiting problems. 
+Tinco is a virtual assistant or chatbot for solving DMV waiting problems. 
 
 #### Problem
 
