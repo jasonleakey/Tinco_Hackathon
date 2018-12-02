@@ -7,9 +7,10 @@ const INTENT_IDS = {
   RIGHT_CAR_AND_ZIP: '5e479c71-e8a8-4535-9a83-075145cd205c',
   PAY_NOW_YES: '342248f9-405f-4475-bf86-5f54fedc48d4',
   PAY_NOW: '78536189-38d7-4964-b321-3dccc6026aea',
-}
+  JURY_DUTY: 'c104c935-dd1a-4e6c-9781-016abc3fc839',
+};
 
-function validateLicensePlateNumber (req, res, next) {
+function validateLicensePlateNumber(req, res, next) {
   // get the employee ID parameter from the request header received from Dialogflow
 
   let plateNumber = req.body.queryResult.parameters.plateNumber;
@@ -19,7 +20,7 @@ function validateLicensePlateNumber (req, res, next) {
   if (plateNumber.length !== 7 && plateNumber.length !== 6) {
     fb_send_message({
       messaging_type: 'text',
-      recipient:{
+      recipient: {
         id: req.body.originalDetectIntentRequest.payload.data.sender.id,
       },
       message: {
@@ -29,7 +30,7 @@ function validateLicensePlateNumber (req, res, next) {
   } else if (plateNumber.match(pattern) !== null) {
     fb_send_message({
       messaging_type: 'text',
-      recipient:{
+      recipient: {
         id: req.body.originalDetectIntentRequest.payload.data.sender.id,
       },
       message: {
@@ -53,12 +54,16 @@ function showPaymentOptions(req, res, next) {
         {
           content_type: 'text',
           title: 'Yes',
-          payload: 'haha',
-          image_url: 'https://image.freepik.com/free-icon/apple-logo_318-40184.jpg'
+          payload: 'yes',
+        },
+        {
+          content_type: 'text',
+          title: 'I\'ll use something else.',
+          payload: 'others',
         },
       ]
     }
-  }).then(({ body}) => {
+  }).then(({ body }) => {
     console.log(`response=${JSON.stringify(body)}`);
     res.end();
   }).catch((error) => {
@@ -67,8 +72,50 @@ function showPaymentOptions(req, res, next) {
   });
 }
 
-router.post('*', function (req, res, next) {
+function juryOptions(req, res, next) {
+  fb_send_message({
+    recipient: {
+      id: req.body.originalDetectIntentRequest.payload.data.sender.id,
+    },
+    message: {
+      text: 'I might be able to help you request an excuse from jury duty.',
+      quick_replies: [
+        {
+          content_type: 'text',
+          title: 'Medical Issue',
+        },
+        {
+          content_type: 'text',
+          title: 'Financial Hardship',
+        },
+        {
+          content_type: 'text',
+          title: 'Personal Obligation - Full-Time Care',
+        },
+        {
+          content_type: 'text',
+          title: 'Transportation Problem',
+        },
+        {
+          content_type: 'text',
+          title: 'Prior Service',
+        },
+      ]
+    }
+  }).then(({ body }) => {
+    console.log(`response=${JSON.stringify(body)}`);
+    res.end();
+  }).catch((error) => {
+    console.log(`error=${error}`);
+    res.end();
+  });
+}
+
+// dialogflow webhook
+router.post('/tinco*', function (req, res, next) {
   console.log(`req=${JSON.stringify(req.body)}`);
+
+
 
   const { body } = req;
   const intent_name = body.queryResult.intent.name;
@@ -78,7 +125,33 @@ router.post('*', function (req, res, next) {
   } else if (intent_name === intent_prefix + INTENT_IDS.PAY_NOW_YES) {
   } else if (intent_name === intent_prefix + INTENT_IDS.PAY_NOW) {
     showPaymentOptions(req, res, next);
+  } else if (intent_name === intent_prefix + INTENT_IDS.JURY_DUTY) {
+    juryOptions(req, res, next)
   }
 });
+
+// facebook messenger webhook
+router.post('/webhook', (req, res, next) => {
+  const body = req.body;
+
+  // Checks this is an event from a page subscription
+  if (body.object === 'page') {
+
+    // Iterates over each entry - there may be multiple if batched
+    body.entry.forEach(function(entry) {
+
+      // Gets the message. entry.messaging is an array, but
+      // will only ever contain one message, so we get index 0
+      let webhook_event = entry.messaging[0];
+      console.log(webhook_event);
+    });
+
+    // Returns a '200 OK' response to all requests
+    res.status(200).send('EVENT_RECEIVED');
+  } else {
+    // Returns a '404 Not Found' if event is not from a page subscription
+    res.sendStatus(404);
+  }
+})
 
 module.exports = router;

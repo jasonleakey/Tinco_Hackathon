@@ -1,0 +1,117 @@
+{
+  "id": "c104c935-dd1a-4e6c-9781-016abc3fc839",
+  "parentId": "adc2bd8b-9531-4f3d-913c-a86ace024ed4",
+  "rootParentId": "77d5b3bb-f54d-4e3e-9eda-e079aae62a32",
+  "name": "jury",
+  "auto": true,
+  "contexts": [
+    "final_confirmation-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "vehicleregistrationrenewal-custom.vehicleregistrationrenewal-custom-yes.vehicleregistrationrenewal-custom-yes-yes.paynow-yes.paynow-yes-custom.final_confirmation-custom",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1543729331,
+  "fallbackIntent": false,
+  "events": [],
+  "userSays": [
+    {
+      "id": "f1606048-99db-4ba3-807b-914cfe4b06e4",
+      "data": [
+        {
+          "text": "help jury duty"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 1543729331,
+      "isAuto": false
+    },
+    {
+      "id": "e4ebd749-b88a-4aa0-9313-90a013663976",
+      "data": [
+        {
+          "text": "help me about jury duty"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 1543729331,
+      "isAuto": false
+    },
+    {
+      "id": "f40825fb-69cc-4707-b35b-250c9e46c672",
+      "data": [
+        {
+          "text": "I want to know something about jury duty"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 1543729331,
+      "isAuto": false
+    },
+    {
+      "id": "715faa81-a3fd-4691-a3d4-9a2ef48dc9b2",
+      "data": [
+        {
+          "text": "duty"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 1543729331,
+      "isAuto": false
+    },
+    {
+      "id": "3765f31f-3d2d-4d02-9fc8-6a11cc3107dc",
+      "data": [
+        {
+          "text": "jury"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 1543729331,
+      "isAuto": false
+    },
+    {
+      "id": "71f12f18-d4a2-41b9-81e6-cc211b67267d",
+      "data": [
+        {
+          "text": "jury duty"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 1543729331,
+      "isAuto": false
+    },
+    {
+      "id": "47e854bf-1273-4b5d-8e1e-c7b281e2c5ab",
+      "data": [
+        {
+          "text": "Can you help me get out of Jury duty?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 1543729331,
+      "isAuto": false
+    }
+  ],
+  "followUpIntents": [],
+  "liveAgentHandoff": false,
+  "endInteraction": false,
+  "templates": []
+}
