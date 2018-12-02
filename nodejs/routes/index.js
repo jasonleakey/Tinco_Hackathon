@@ -112,7 +112,7 @@ function juryOptions(req, res, next) {
 }
 
 // dialogflow webhook
-router.post('/tinco*', function (req, res, next) {
+router.post('/dialogflow', function (req, res, next) {
   console.log(`req=${JSON.stringify(req.body)}`);
 
 
