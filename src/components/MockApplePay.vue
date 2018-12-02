@@ -7,6 +7,8 @@
 </template>
 
 <script>
+  // import axios from 'axios';
+
   export default {
     name: 'MockApplePay',
     data: () => ({
@@ -14,20 +16,22 @@
       sessionId: '',
     }),
     mounted() {
-      this.$ws.on('message', function (message) {
-        if (message.type === 'utf8' && message.utf8Data.action === 'pay') {
-          this.sessionId = message.utf8Data.sessionId;
-          this.show = true;
-        }
-      })
     },
     methods: {
       dismiss() {
-        this.$ws.sendUTF({
-          action: 'pay_done',
-          sessionId: this.sessionId,
-        });
-        this.show = false;
+        // axios.post(`https://dialogflow.googleapis.com/v2/projects/tinco-1e8d6/agent/sessions/${}:detectIntent`, {
+        //   queryInput: {
+        //     event: {
+        //       name: 'PAY_DONE_CONFIRM',
+        //       languageCode: 'en-US'
+        //     }
+        //   }
+        // }, {
+        //   headers: {
+        //     Authorization: `Bearer 4b6dc071bb194b92b08e1cf5b141bd0c`
+        //   }
+        // });
+        // this.show = false;
       }
     },
   };
@@ -35,14 +39,15 @@
 
 <style scoped lang="scss">
   .shade {
-      position: fixed;
-      z-index: 900;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.3);
-    }
+    position: fixed;
+    z-index: 900;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
   .modal {
     width: 100%;
     height: 350px;
@@ -61,7 +66,6 @@
       height: 100%;
     }
   }
-
 
 
 </style>

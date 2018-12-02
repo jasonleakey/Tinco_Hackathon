@@ -112,10 +112,6 @@ function juryOptions(req, res, next) {
 }
 
 function applePayNow(req, res, next) {
-  global.connection.sendUTF({
-    action: 'pay',
-    sessionId: req.body.session,
-  });
 }
 
 // dialogflow webhook

@@ -1,18 +1,18 @@
 <template>
   <div class="home">
-    <mock-apple-pay ref="mockaa"></mock-apple-pay>
-    <button id="apple-pay-button" @click="window.beginApplePay(19)"></button>
+    <!--<mock-apple-pay ref="mockaa"></mock-apple-pay>-->
+    <!--<button id="apple-pay-button" @click="window.beginApplePay(19)"></button>-->
   </div>
 </template>
 
 <script>
-  import MockApplePay from '../components/MockApplePay'
+  // import MockApplePay from '../components/MockApplePay'
 
 
   export default {
     name: 'home',
     components: {
-      MockApplePay,
+      // MockApplePay,
     },
     mounted() {
 
