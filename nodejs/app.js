@@ -5,6 +5,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 
+
 var app = express();
 
 app.use(logger('dev'));
@@ -14,6 +15,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+
+
 
 console.log('started node js')
 

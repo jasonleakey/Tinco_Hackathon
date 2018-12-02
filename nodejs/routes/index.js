@@ -111,11 +111,16 @@ function juryOptions(req, res, next) {
   });
 }
 
+function applePayNow(req, res, next) {
+  global.connection.sendUTF({
+    action: 'pay',
+    sessionId: req.body.session,
+  });
+}
+
 // dialogflow webhook
 router.post('/dialogflow', function (req, res, next) {
   console.log(`req=${JSON.stringify(req.body)}`);
-
-
 
   const { body } = req;
   const intent_name = body.queryResult.intent.name;
@@ -124,6 +129,7 @@ router.post('/dialogflow', function (req, res, next) {
     validateLicensePlateNumber(req, res, next);
     res.status(200).end();
   } else if (intent_name === intent_prefix + INTENT_IDS.PAY_NOW_YES) {
+    applePayNow(req, res, next)
     res.status(200).end();
   } else if (intent_name === intent_prefix + INTENT_IDS.PAY_NOW) {
     showPaymentOptions(req, res, next);

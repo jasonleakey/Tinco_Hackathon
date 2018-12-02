@@ -3,8 +3,25 @@
     <router-view/>
   </div>
 </template>
+<script>
+
+  export default {
+    mounted() {
+
+    }
+  }
+</script>
 
 <style lang="scss">
+  html, body {
+    width: 100%;
+    height: 100%;
+  }
+
+  body {
+    margin: -8px;
+    background-color: #e1e1e1;
+  }
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
