@@ -57,6 +57,7 @@ The repo contains multi components above.
 1. Create a [Facebook Page](https://www.facebook.com/pages/creation/).
 2. Create a Facebook app at [Facebook Developer Portal](https://developers.facebook.com/apps/).
    * In the Facebook app page created, Add a product *Facebook Messenger*
+   * Put the url from the heroku dyno into the Webhook location.
 3. Back in the Facebook Page's Settings, enable Facebook Customer Chat Plugin and whitelist your domain.
    * In the Facebook Customer Chat Plugin's setup modal, you will see the embedded code.
 4. Replace the ```page_id``` in the page [public/index.html](./public/index.html)
@@ -89,5 +90,14 @@ git subtree push --prefix nodejs heroku master
 
 Please follow this instruction, https://stripe.com/docs/apple-pay/web/v2
 
+#### Setup Netlify
 
+1. Register an account
+2. Connect a site to this repo. 
+3. Set the build command with ```npm run build``` and the publish folder with ```dist```.
+4. Netlify will automatically build for you. In our case, we get a url of "https://tinco.netlify.com"
 
+### How to Run
+
+When all environments are setup correctly, open your browser, type in the url of "https://<your netlify site>.netlify.com".
+  You are all set! 
