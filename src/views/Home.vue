@@ -18,7 +18,6 @@
         },
       })
       */
-      window.beginApplePay(19);
     },
     methods: {
     },
