@@ -26,6 +26,7 @@ This is a demo to show the concept.
   - CSS
   - Javascript
   - Facebook Customer Chat Plugin
+  - Netlify
 - Backend technologies. 
   - Heroku
   - node.js
@@ -51,15 +52,34 @@ The repo contains multi components above.
 
 ### Project setup
 
-#### Setup 
+#### Setup Facebook Customer Chat Plugin
 
-### Compiles and hot-reloads for development
+1. Create a [Facebook Page](https://www.facebook.com/pages/creation/).
+2. Create a Facebook app at [Facebook Developer Portal](https://developers.facebook.com/apps/).
+   * In the Facebook app page created, Add a product *Facebook Messenger*
+3. Back in the Facebook Page's Settings, enable Facebook Customer Chat Plugin and whitelist your domain.
+   * In the Facebook Customer Chat Plugin's setup modal, you will see the embedded code.
+4. Replace the ```page_id``` in the page [public/index.html](./public/index.html)
+to 
+```html
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+     attribution=setup_tool
+     page_id="516083218869346">
+ </div>
+```
 
-### Compiles and minifies for production
+#### Setup Google DialogFlow
 
-### Run your tests
+1. Register a DialogFlow account
+2. Createa a DialogFlow Agent
+3. In the Intents page, import all *.json files from the [dialogflow/intents](./dialogflow/intents) folder
+4. In the Entities page, import all *.json files from the [dialogflow/entities](./dialogflow/entities) folder
+5. In the Fulfillment page, Enable Webhook, input the webook URL as described in [Setup Heroku] below
 
-### Lints and fixes files
+#### Setup Heroku
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+
+

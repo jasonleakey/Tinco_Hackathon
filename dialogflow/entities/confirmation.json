@@ -1,0 +1,29 @@
+{
+  "id": "fa4821b1-fb69-4416-8f8c-11558646b320",
+  "name": "confirmation",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "yes",
+      "synonyms": [
+        "yes",
+        "sure",
+        "true",
+        "defnitely",
+        "certainly",
+        "of course"
+      ]
+    },
+    {
+      "value": "no",
+      "synonyms": [
+        "no",
+        "not",
+        "none",
+        "not really"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": true
+}
