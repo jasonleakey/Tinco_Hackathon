@@ -79,7 +79,15 @@ to
 
 #### Setup Heroku
 
+1. Install a Dyno. Use Hobby plan.
+2. use this command to deploy code to heroku
+```
+git subtree push --prefix nodejs heroku master
+```
 
+#### Setup Apple Pay + Stripe
+
+Please follow this instruction, https://stripe.com/docs/apple-pay/web/v2
 
 
 
