@@ -122,12 +122,18 @@ router.post('/dialogflow', function (req, res, next) {
   const intent_prefix = 'projects/tinco-1e8d6/agent/intents/';
   if (intent_name === intent_prefix + INTENT_IDS.RIGHT_CAR_AND_ZIP) {
     validateLicensePlateNumber(req, res, next);
+    res.status(200).end();
   } else if (intent_name === intent_prefix + INTENT_IDS.PAY_NOW_YES) {
+    res.status(200).end();
   } else if (intent_name === intent_prefix + INTENT_IDS.PAY_NOW) {
     showPaymentOptions(req, res, next);
+    res.status(200).end();
   } else if (intent_name === intent_prefix + INTENT_IDS.JURY_DUTY) {
     juryOptions(req, res, next)
+    res.status(200).end();
   }
+
+  next()
 });
 
 // facebook messenger webhook
@@ -152,6 +158,7 @@ router.post('/webhook', (req, res, next) => {
     // Returns a '404 Not Found' if event is not from a page subscription
     res.sendStatus(404);
   }
+  next()
 })
 
 module.exports = router;
