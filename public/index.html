@@ -45,6 +45,14 @@
     crossorigin="anonymous"></script>
 <script>
   Stripe.setPublishableKey('pk_test_LGsMPv0FGVqIMz6vRPsVwOP7');
+  Stripe.applePay.checkAvailability(function(available) {
+    console.log('haha')
+    if (available) {
+      console.log('available')
+      document.getElementById('apple-pay-button').style.display = 'block';
+    }
+  });
+
   function beginApplePay(amount) {
     var paymentRequest = {
       countryCode: 'US',
