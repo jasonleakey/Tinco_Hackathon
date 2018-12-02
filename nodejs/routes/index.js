@@ -7,7 +7,7 @@ const INTENT_IDS = {
   RIGHT_CAR_AND_ZIP: '5e479c71-e8a8-4535-9a83-075145cd205c',
   PAY_NOW_YES: '342248f9-405f-4475-bf86-5f54fedc48d4',
   PAY_NOW: '78536189-38d7-4964-b321-3dccc6026aea',
-  JURY_DUTY: 'c104c935-dd1a-4e6c-9781-016abc3fc839',
+  JURY_DUTY: '8056dca2-bd9e-4a58-ab47-cbfe6310baa6',
 };
 
 function validateLicensePlateNumber(req, res, next) {

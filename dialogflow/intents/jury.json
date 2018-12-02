@@ -1,19 +1,24 @@
 {
-  "id": "c104c935-dd1a-4e6c-9781-016abc3fc839",
-  "parentId": "adc2bd8b-9531-4f3d-913c-a86ace024ed4",
+  "id": "8056dca2-bd9e-4a58-ab47-cbfe6310baa6",
+  "parentId": "342248f9-405f-4475-bf86-5f54fedc48d4",
   "rootParentId": "77d5b3bb-f54d-4e3e-9eda-e079aae62a32",
   "name": "jury",
   "auto": true,
   "contexts": [
-    "final_confirmation-followup"
+    "paynow-yes-followup"
   ],
   "responses": [
     {
       "resetContexts": false,
-      "action": "vehicleregistrationrenewal-custom.vehicleregistrationrenewal-custom-yes.vehicleregistrationrenewal-custom-yes-yes.paynow-yes.paynow-yes-custom.final_confirmation-custom",
+      "action": "vehicleregistrationrenewal-custom.vehicleregistrationrenewal-custom-yes.vehicleregistrationrenewal-custom-yes-yes.paynow-yes.paynow-yes-custom",
       "affectedContexts": [],
       "parameters": [],
-      "messages": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": []
+        }
+      ],
       "defaultResponsePlatforms": {},
       "speech": []
     }
@@ -21,72 +26,24 @@
   "priority": 500000,
   "webhookUsed": true,
   "webhookForSlotFilling": false,
-  "lastUpdate": 1543729331,
+  "lastUpdate": 1543751961,
   "fallbackIntent": false,
   "events": [],
   "userSays": [
     {
-      "id": "f1606048-99db-4ba3-807b-914cfe4b06e4",
+      "id": "6443477f-f733-40f8-aba7-bdebe751caed",
       "data": [
         {
-          "text": "help jury duty"
+          "text": "can you help me get out of jury duty?"
         }
       ],
       "isTemplate": false,
       "count": 0,
-      "updated": 1543729331,
+      "updated": 1543751961,
       "isAuto": false
     },
     {
-      "id": "e4ebd749-b88a-4aa0-9313-90a013663976",
-      "data": [
-        {
-          "text": "help me about jury duty"
-        }
-      ],
-      "isTemplate": false,
-      "count": 0,
-      "updated": 1543729331,
-      "isAuto": false
-    },
-    {
-      "id": "f40825fb-69cc-4707-b35b-250c9e46c672",
-      "data": [
-        {
-          "text": "I want to know something about jury duty"
-        }
-      ],
-      "isTemplate": false,
-      "count": 0,
-      "updated": 1543729331,
-      "isAuto": false
-    },
-    {
-      "id": "715faa81-a3fd-4691-a3d4-9a2ef48dc9b2",
-      "data": [
-        {
-          "text": "duty"
-        }
-      ],
-      "isTemplate": false,
-      "count": 0,
-      "updated": 1543729331,
-      "isAuto": false
-    },
-    {
-      "id": "3765f31f-3d2d-4d02-9fc8-6a11cc3107dc",
-      "data": [
-        {
-          "text": "jury"
-        }
-      ],
-      "isTemplate": false,
-      "count": 0,
-      "updated": 1543729331,
-      "isAuto": false
-    },
-    {
-      "id": "71f12f18-d4a2-41b9-81e6-cc211b67267d",
+      "id": "a25ff75b-adf9-4f9e-b26b-30db3d48a8e1",
       "data": [
         {
           "text": "jury duty"
@@ -94,19 +51,67 @@
       ],
       "isTemplate": false,
       "count": 0,
-      "updated": 1543729331,
+      "updated": 1543751961,
       "isAuto": false
     },
     {
-      "id": "47e854bf-1273-4b5d-8e1e-c7b281e2c5ab",
+      "id": "be51e4f2-e83c-469a-9d41-7a19f0b115e4",
       "data": [
         {
-          "text": "Can you help me get out of Jury duty?"
+          "text": "jury"
         }
       ],
       "isTemplate": false,
       "count": 0,
-      "updated": 1543729331,
+      "updated": 1543751961,
+      "isAuto": false
+    },
+    {
+      "id": "f9464b0c-465a-4918-9ef4-92b33104216a",
+      "data": [
+        {
+          "text": "duty"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 1543751961,
+      "isAuto": false
+    },
+    {
+      "id": "fe8ccc28-b612-4092-b1e3-eda218044069",
+      "data": [
+        {
+          "text": "I want to know something about jury duty"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 1543751961,
+      "isAuto": false
+    },
+    {
+      "id": "c7a32885-9626-490d-b5de-03c4f8e86b0e",
+      "data": [
+        {
+          "text": "help me about jury duty"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 1543751961,
+      "isAuto": false
+    },
+    {
+      "id": "8fd0d3bf-14e3-45e6-b7ad-d464a45419a0",
+      "data": [
+        {
+          "text": "help jury duty"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0,
+      "updated": 1543751961,
       "isAuto": false
     }
   ],
